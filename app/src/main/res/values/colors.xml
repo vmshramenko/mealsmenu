@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="text_color">#E6E5E5</color>
+    <color name="text_search">#EAE2E7</color>
+    <color name="background">#2F0418</color>
+    <color name="main_color">#480F28</color>
+    <color name="main_light">#6A163A</color>
+    <color name="main_choosen_btn">#55122E</color>
+    <color name="card_on_hold">#60062D</color>
+    <color name="secondary_color">#FF752A</color>
+    <color name="secondary_light">#FF8B4C</color>
+    <color name="secondary_dark">#FF5900</color>
 </resources>
