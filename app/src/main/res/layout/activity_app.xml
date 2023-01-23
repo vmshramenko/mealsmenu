@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2F0418"
+    android:background="@color/background"
     tools:context=".activity.AppActivity">
 
     <RelativeLayout
@@ -26,12 +26,10 @@
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
             android:background="@color/main_light"
-            android:visibility="visible"
-            app:itemBackground="@menu/navigation_bar"
             app:itemIconTint="@color/text_color"
+            app:itemBackground="@menu/navigation_bar"
             app:itemTextColor="@color/text_color"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_nav_menu" />
-
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
