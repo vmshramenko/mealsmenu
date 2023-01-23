@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.mealsmenu.R
 import com.example.mealsmenu.adapters.CategoryMealsAdapter
 import com.example.mealsmenu.viewmodels.BaseViewModel
@@ -40,7 +39,6 @@ abstract class BaseCategoryFragment : Fragment() {
                 when {
                     !it.meals.isNullOrEmpty() -> {
                         adapter.setCocktails(it.meals)
-
                     }
                     !it.errorMessage.isNullOrEmpty() -> {
                         Toast.makeText(

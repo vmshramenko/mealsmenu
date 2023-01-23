@@ -1,5 +1,6 @@
 package com.example.mealsmenu.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import com.example.mealsmenu.data.Meal
 class CategoryMealsAdapter(
     private var mList: List<Meal>
     ) : RecyclerView.Adapter<CategoryMealsAdapter.ViewHolder>() {
+    @SuppressLint("NotifyDataSetChanged")
     fun setCocktails(cocktails: List<Meal>) {
         mList = cocktails
         notifyDataSetChanged()
