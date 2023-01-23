@@ -18,7 +18,7 @@ class VegetarianFragment : BaseCategoryFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_vegetarian, container, false)
+        return inflater.inflate(R.layout.fragment_base_category, container, false)
     }
 
     override fun initViewModel(): BaseViewModel {

@@ -19,7 +19,7 @@ class DessertFragment : BaseCategoryFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_dessert, container, false)
+        return inflater.inflate(R.layout.fragment_base_category, container, false)
     }
 
     override fun initViewModel(): BaseViewModel {
