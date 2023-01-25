@@ -38,7 +38,7 @@ abstract class BaseCategoryFragment : Fragment() {
             baseViewModel.meal.collect {
                 when {
                     !it.meals.isNullOrEmpty() -> {
-                        adapter.setCocktails(it.meals)
+                        adapter.setMeals(it.meals)
                     }
                     !it.errorMessage.isNullOrEmpty() -> {
                         Toast.makeText(

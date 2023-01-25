@@ -11,9 +11,9 @@ import com.bumptech.glide.Glide
 import com.example.mealsmenu.R
 import com.example.mealsmenu.data.Meal
 
-class CategoryMealsAdapter(
+class HomeRecyclerAdapter(
     private var mList: List<Meal>
-    ) : RecyclerView.Adapter<CategoryMealsAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder>() {
     @SuppressLint("NotifyDataSetChanged")
     fun setMeals(meals: List<Meal>) {
         mList = meals
@@ -23,7 +23,7 @@ class CategoryMealsAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_category_design, parent, false)
+            .inflate(R.layout.recycler_home_design, parent, false)
 
         return ViewHolder(view)
     }

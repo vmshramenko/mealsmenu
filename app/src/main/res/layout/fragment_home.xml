@@ -73,6 +73,16 @@
         app:layout_constraintStart_toStartOf="@id/breakfast"
         app:layout_constraintTop_toBottomOf="@+id/fire_breakfast" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_breakfast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fire_breakfast"
+        tools:listitem="@layout/recycler_home_design" />
+
 
     <TextView
         android:id="@+id/starter"
@@ -84,8 +94,8 @@
         android:text="@string/starter"
         android:textColor="@color/secondary_dark"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/progress_bar_breakfast"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar_breakfast" />
+        app:layout_constraintStart_toStartOf="@id/recycler_breakfast"
+        app:layout_constraintTop_toBottomOf="@id/recycler_breakfast" />
 
     <ImageView
         android:id="@+id/fire_starter"
@@ -108,6 +118,16 @@
         app:layout_constraintStart_toStartOf="@id/starter"
         app:layout_constraintTop_toBottomOf="@+id/fire_starter" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_starter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fire_starter"
+        tools:listitem="@layout/recycler_home_design" />
+
     <TextView
         android:id="@+id/dessert"
         android:layout_width="wrap_content"
@@ -118,8 +138,8 @@
         android:text="@string/dessert"
         android:textColor="@color/secondary_dark"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/progress_bar_starter"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar_starter" />
+        app:layout_constraintStart_toStartOf="@+id/recycler_starter"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_starter" />
 
     <ImageView
         android:id="@+id/fire_dessert"
@@ -141,5 +161,15 @@
         app:layout_constraintEnd_toEndOf="@id/dessert"
         app:layout_constraintStart_toStartOf="@id/dessert"
         app:layout_constraintTop_toBottomOf="@+id/fire_dessert" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_dessert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fire_dessert"
+        tools:listitem="@layout/recycler_home_design" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

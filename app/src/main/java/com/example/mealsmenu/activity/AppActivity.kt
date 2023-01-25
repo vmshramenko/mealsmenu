@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.mealsmenu.R
+import com.example.mealsmenu.fragments.BeefFragment
 import com.example.mealsmenu.fragments.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -27,9 +28,9 @@ class AppActivity : AppCompatActivity() {
             R.id.home -> {
                 selectedFragment = HomeFragment()
             }
-           /* R.id.catalog -> {
-                selectedFragment = CatalogFragment()
-            }*/
+           R.id.catalog -> {
+                selectedFragment = BeefFragment()
+            }
         }
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, selectedFragment).commit()
