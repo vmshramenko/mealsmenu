@@ -2,6 +2,7 @@ package com.example.mealsmenu.data
 
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface MealsApi {
     @GET("filter.php?c=Breakfast")
@@ -45,4 +46,7 @@ interface MealsApi {
 
     @GET("filter.php?c=Vegetarian")
     suspend fun getVegetarianMeals(): Response<MealsResponse>
+
+    @GET("lookup.php")
+    suspend fun getMealDetails(@Query("i") search: String): Response<DetailsResponse>
 }

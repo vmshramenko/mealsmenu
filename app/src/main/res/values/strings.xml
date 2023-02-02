@@ -9,4 +9,8 @@
     <string name="breakfast">Breakfast</string>
     <string name="starter">Starter</string>
     <string name="dessert">Dessert</string>
+    <string name="serve">Serve</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="meal_name">meal_name</string>
+    <string name="instruction">Instruction</string>
 </resources>

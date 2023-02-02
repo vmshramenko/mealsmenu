@@ -1,175 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    tools:ignore="MissingConstraints">
 
-    <SearchView
-        android:id="@+id/search"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:iconifiedByDefault="false"
-        android:padding="4dp"
-        android:queryHint="Search Meal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <View
-        android:id="@+id/search_meals"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:padding="4dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:contentDescription="@string/home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/breakfast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:drawablePadding="17.5sp"
-        android:gravity="start"
-        android:paddingLeft="37.5sp"
-        android:text="@string/breakfast"
-        android:textColor="@color/secondary_dark"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/search"
-        app:layout_constraintTop_toBottomOf="@+id/search" />
-
-    <ImageView
-        android:id="@+id/fire_breakfast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:contentDescription="@string/breakfast"
-        android:src="@drawable/line_5"
-        app:layout_constraintBottom_toBottomOf="@+id/breakfast"
-        app:layout_constraintStart_toStartOf="@+id/breakfast"
-        app:layout_constraintTop_toBottomOf="@+id/breakfast" />
-
-    <ProgressBar
-        android:id="@+id/progress_bar_breakfast"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@id/breakfast"
-        app:layout_constraintStart_toStartOf="@id/breakfast"
-        app:layout_constraintTop_toBottomOf="@+id/fire_breakfast" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_breakfast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fire_breakfast"
-        tools:listitem="@layout/recycler_home_design" />
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:iconifiedByDefault="false"
+            android:padding="4px"
+            android:queryHint="Search Meal"
+            android:background="@drawable/search_rounded"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/starter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawablePadding="17.5sp"
-        android:gravity="start"
-        android:paddingLeft="37.5sp"
-        android:text="@string/starter"
-        android:textColor="@color/secondary_dark"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@id/recycler_breakfast"
-        app:layout_constraintTop_toBottomOf="@id/recycler_breakfast" />
+        <View
+            android:id="@+id/search_meals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:clickable="true"
+            android:contentDescription="@string/home"
+            android:focusable="true"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/fire_starter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:contentDescription="@string/starter"
-        android:src="@drawable/line_5"
-        app:layout_constraintBottom_toBottomOf="@+id/starter"
-        app:layout_constraintStart_toStartOf="@+id/starter"
-        app:layout_constraintTop_toBottomOf="@+id/starter" />
+        <TextView
+            android:id="@+id/breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="17.5sp"
+            android:gravity="start"
+            android:paddingLeft="37.5sp"
+            android:text="@string/breakfast"
+            android:textColor="@color/secondary_dark"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/search"
+            app:layout_constraintTop_toBottomOf="@+id/search" />
 
-    <ProgressBar
-        android:id="@+id/progress_bar_starter"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@id/starter"
-        app:layout_constraintStart_toStartOf="@id/starter"
-        app:layout_constraintTop_toBottomOf="@+id/fire_starter" />
+        <ImageView
+            android:id="@+id/fire_breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:contentDescription="@string/breakfast"
+            android:src="@drawable/line_5"
+            app:layout_constraintBottom_toBottomOf="@+id/breakfast"
+            app:layout_constraintStart_toStartOf="@+id/breakfast"
+            app:layout_constraintTop_toBottomOf="@+id/breakfast" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_starter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fire_starter"
-        tools:listitem="@layout/recycler_home_design" />
+        <ProgressBar
+            android:id="@+id/progress_bar_breakfast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/breakfast"
+            app:layout_constraintStart_toStartOf="@id/breakfast"
+            app:layout_constraintTop_toBottomOf="@+id/fire_breakfast" />
 
-    <TextView
-        android:id="@+id/dessert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawablePadding="17.5sp"
-        android:gravity="start"
-        android:paddingLeft="37.5sp"
-        android:text="@string/dessert"
-        android:textColor="@color/secondary_dark"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/recycler_starter"
-        app:layout_constraintTop_toBottomOf="@+id/recycler_starter" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fire_breakfast"
+            tools:listitem="@layout/recycler_home_design" />
 
-    <ImageView
-        android:id="@+id/fire_dessert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:contentDescription="@string/starter"
-        android:src="@drawable/line_5"
-        app:layout_constraintBottom_toBottomOf="@+id/dessert"
-        app:layout_constraintStart_toStartOf="@+id/dessert"
-        app:layout_constraintTop_toBottomOf="@+id/dessert" />
 
-    <ProgressBar
-        android:id="@+id/progress_bar_dessert"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@id/dessert"
-        app:layout_constraintStart_toStartOf="@id/dessert"
-        app:layout_constraintTop_toBottomOf="@+id/fire_dessert" />
+        <TextView
+            android:id="@+id/starter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="17.5sp"
+            android:gravity="start"
+            android:paddingLeft="37.5sp"
+            android:text="@string/starter"
+            android:textColor="@color/secondary_dark"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@id/recycler_breakfast"
+            app:layout_constraintTop_toBottomOf="@id/recycler_breakfast" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_dessert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fire_dessert"
-        tools:listitem="@layout/recycler_home_design" />
+        <ImageView
+            android:id="@+id/fire_starter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:contentDescription="@string/starter"
+            android:src="@drawable/line_5"
+            app:layout_constraintBottom_toBottomOf="@+id/starter"
+            app:layout_constraintStart_toStartOf="@+id/starter"
+            app:layout_constraintTop_toBottomOf="@+id/starter" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/progress_bar_starter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/starter"
+            app:layout_constraintStart_toStartOf="@id/starter"
+            app:layout_constraintTop_toBottomOf="@+id/fire_starter" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_starter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fire_starter"
+            tools:listitem="@layout/recycler_home_design" />
+
+        <TextView
+            android:id="@+id/dessert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="17.5sp"
+            android:gravity="start"
+            android:paddingLeft="37.5sp"
+            android:text="@string/dessert"
+            android:textColor="@color/secondary_dark"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/recycler_starter"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_starter" />
+
+        <ImageView
+            android:id="@+id/fire_dessert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:contentDescription="@string/starter"
+            android:src="@drawable/line_5"
+            app:layout_constraintBottom_toBottomOf="@+id/dessert"
+            app:layout_constraintStart_toStartOf="@+id/dessert"
+            app:layout_constraintTop_toBottomOf="@+id/dessert" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_dessert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/dessert"
+            app:layout_constraintStart_toStartOf="@id/dessert"
+            app:layout_constraintTop_toBottomOf="@+id/fire_dessert" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_dessert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fire_dessert"
+            tools:listitem="@layout/recycler_home_design" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

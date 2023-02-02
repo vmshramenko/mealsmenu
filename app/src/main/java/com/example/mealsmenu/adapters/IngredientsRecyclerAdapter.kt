@@ -9,21 +9,22 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mealsmenu.R
-import com.example.mealsmenu.data.Meal
+import com.example.mealsmenu.data.Ingredient
 
-class HomeRecyclerAdapter(
-    private var mList: List<Meal>, val clickListener: (idMeal: Int) -> Unit
-) : RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder>() {
+class IngredientsRecyclerAdapter(
+    private var mList: List<Ingredient>
+) : RecyclerView.Adapter<IngredientsRecyclerAdapter.ViewHolder>() {
+
     @SuppressLint("NotifyDataSetChanged")
-    fun setMeals(meals: List<Meal>) {
-        mList = meals
+    fun setIngredients(ingredients: List<Ingredient>) {
+        mList = ingredients
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_home_design, parent, false)
+            .inflate(R.layout.ingredients_recycler_adapter, parent, false)
 
         return ViewHolder(view)
     }
@@ -32,14 +33,12 @@ class HomeRecyclerAdapter(
 
         val itemsViewModel = mList[position]
 
-        Glide.with(holder.imageView.context)
-            .load(itemsViewModel.strMealThumb)
-            .into(holder.imageView)
+        Glide.with(holder.imageIngredient.context)
+            .load(itemsViewModel.strThumbIngredient)
+            .into(holder.imageIngredient)
 
-        holder.textView.text = itemsViewModel.strMeal
-        holder.itemView.setOnClickListener {
-            clickListener(itemsViewModel.idMeal.toInt())
-        }
+        holder.ingredientName.text = itemsViewModel.name
+        holder.measure.text = itemsViewModel.measure
     }
 
     override fun getItemCount(): Int {
@@ -47,7 +46,8 @@ class HomeRecyclerAdapter(
     }
 
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.meal_image)
-        val textView: TextView = itemView.findViewById(R.id.meal_name)
+        val imageIngredient: ImageView = itemView.findViewById(R.id.image_ingredient)
+        val ingredientName: TextView = itemView.findViewById(R.id.ingredient)
+        val measure: TextView = itemView.findViewById(R.id.measure)
     }
 }

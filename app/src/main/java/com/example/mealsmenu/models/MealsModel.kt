@@ -2,6 +2,7 @@ package com.example.mealsmenu.models
 
 import android.annotation.SuppressLint
 import android.util.Log
+import com.example.mealsmenu.data.DetailsResponse
 import com.example.mealsmenu.data.MealsApi
 import com.example.mealsmenu.data.MealsResponse
 import com.example.mealsmenu.data.RetrofitHelper
@@ -117,6 +118,14 @@ class MealsModel {
         val quotesApi = RetrofitHelper.getInstance().create(MealsApi::class.java)
         val result = quotesApi.getVegetarianMeals()
         Log.d("GET Vegetarian Result", result.body().toString())
+
+        return result
+    }
+
+    suspend fun getDetailsMeal(id: String): Response<DetailsResponse> {
+        val quotesApi = RetrofitHelper.getInstance().create(MealsApi::class.java)
+        val result = quotesApi.getMealDetails(id)
+        Log.d("GET meal details", result.body().toString())
 
         return result
     }

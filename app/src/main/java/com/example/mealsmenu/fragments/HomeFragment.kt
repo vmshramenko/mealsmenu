@@ -1,6 +1,8 @@
 package com.example.mealsmenu.fragments
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +12,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealsmenu.R
+import com.example.mealsmenu.activity.MealDetailsActivity
 import com.example.mealsmenu.adapters.HomeRecyclerAdapter
 import com.example.mealsmenu.viewmodels.HomeViewModel
-import kotlinx.coroutines.flow.update
 
 class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
@@ -34,9 +36,10 @@ class HomeFragment : Fragment() {
         val recyclerBreakfast = view.findViewById<RecyclerView>(R.id.recycler_breakfast)
         val recyclerStarter = view.findViewById<RecyclerView>(R.id.recycler_starter)
         val recyclerDessert = view.findViewById<RecyclerView>(R.id.recycler_dessert)
-        breakfastAdapter = HomeRecyclerAdapter(emptyList())
-        starterAdapter = HomeRecyclerAdapter(emptyList())
-        dessertAdapter = HomeRecyclerAdapter(emptyList())
+        val search = view.findViewById<View>(R.id.search_meals)
+        breakfastAdapter = HomeRecyclerAdapter(emptyList(), clickListener = { id ->  launchMealDetails(id) })
+        starterAdapter = HomeRecyclerAdapter(emptyList(), clickListener = { id ->  launchMealDetails(id) })
+        dessertAdapter = HomeRecyclerAdapter(emptyList(), clickListener = { id ->  launchMealDetails(id) })
         recyclerBreakfast.adapter = breakfastAdapter
         recyclerStarter.adapter = starterAdapter
         recyclerDessert.adapter = dessertAdapter
@@ -78,6 +81,15 @@ class HomeFragment : Fragment() {
                     }
                 }
             }
+        }
+    }
+
+    private fun launchMealDetails(id: Int){
+        Log.d("SENT id drink", id.toString())
+        if(activity != null){
+            val intent = Intent(context, MealDetailsActivity::class.java)
+            intent.putExtra("idDrink", id.toString())
+            startActivity(intent)
         }
     }
 }
