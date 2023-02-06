@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.mealsmenu.R
 import com.example.mealsmenu.fragments.BeefFragment
+import com.example.mealsmenu.fragments.CatalogFragment
 import com.example.mealsmenu.fragments.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -29,7 +30,7 @@ class AppActivity : AppCompatActivity() {
                 selectedFragment = HomeFragment()
             }
            R.id.catalog -> {
-                selectedFragment = BeefFragment()
+                selectedFragment = CatalogFragment()
             }
         }
         supportFragmentManager.beginTransaction()
