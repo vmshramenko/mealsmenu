@@ -15,14 +15,11 @@ class HomeViewModel : ViewModel() {
     private var mealsModel = MealsModel()
     val breakfastMeal =
         MutableStateFlow<MealsFragmentState<List<Meal>>>(MealsFragmentState(null, null, null, true))
-    val starterMeal =
-        MutableStateFlow<MealsFragmentState<List<Meal>>>(MealsFragmentState(null, null, null, true))
     val dessertMeal =
         MutableStateFlow<MealsFragmentState<List<Meal>>>(MealsFragmentState(null, null, null, true))
 
     init{
         fetchBreakfastMeals()
-        fetchStarterMeals()
         fetchDessertMeals()
     }
 
@@ -30,13 +27,6 @@ class HomeViewModel : ViewModel() {
         viewModelScope.launch {
             val response = mealsModel.getBreakfastMeals()
             processBreakfastMeals(response)
-        }
-    }
-
-    private fun fetchStarterMeals(){
-        viewModelScope.launch {
-            val response = mealsModel.getStarterMeals()
-            processStarterMeals(response)
         }
     }
 
@@ -52,19 +42,6 @@ class HomeViewModel : ViewModel() {
             breakfastMeal.update { it.copy(meals = response.body()!!.meals) }
         } else {
             breakfastMeal.update {
-                it.copy(
-                    error = response.code(),
-                    errorMessage = response.errorBody().toString()
-                )
-            }
-        }
-    }
-
-    private fun processStarterMeals(response: Response<MealsResponse>) {
-        if (response.isSuccessful) {
-            starterMeal.update { it.copy(meals = response.body()!!.meals) }
-        } else {
-            starterMeal.update {
                 it.copy(
                     error = response.code(),
                     errorMessage = response.errorBody().toString()

@@ -15,6 +15,13 @@
         android:theme="@style/Theme.MealsMenu"
         tools:targetApi="31">
         <activity
+            android:name=".activity.SearchMealActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.MealDetailsActivity"
             android:exported="false">
             <meta-data

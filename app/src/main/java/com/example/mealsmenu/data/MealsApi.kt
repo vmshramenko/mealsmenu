@@ -49,4 +49,7 @@ interface MealsApi {
 
     @GET("lookup.php")
     suspend fun getMealDetails(@Query("i") search: String): Response<DetailsResponse>
+
+    @GET("search.php")
+    suspend fun getSearchMeals(@Query("s") search: String): Response<DetailsResponse>
 }

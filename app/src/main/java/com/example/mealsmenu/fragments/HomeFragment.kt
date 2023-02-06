@@ -13,13 +13,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealsmenu.R
 import com.example.mealsmenu.activity.MealDetailsActivity
+import com.example.mealsmenu.activity.SearchMealActivity
 import com.example.mealsmenu.adapters.HomeRecyclerAdapter
 import com.example.mealsmenu.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var breakfastAdapter: HomeRecyclerAdapter
-    private lateinit var starterAdapter: HomeRecyclerAdapter
     private lateinit var dessertAdapter: HomeRecyclerAdapter
 
     override fun onCreateView(
@@ -34,14 +34,11 @@ class HomeFragment : Fragment() {
 
         homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         val recyclerBreakfast = view.findViewById<RecyclerView>(R.id.recycler_breakfast)
-        val recyclerStarter = view.findViewById<RecyclerView>(R.id.recycler_starter)
         val recyclerDessert = view.findViewById<RecyclerView>(R.id.recycler_dessert)
-        val search = view.findViewById<View>(R.id.search_meals)
+        val searchView = view.findViewById<View>(R.id.search_meals)
         breakfastAdapter = HomeRecyclerAdapter(emptyList(), clickListener = { id ->  launchMealDetails(id) })
-        starterAdapter = HomeRecyclerAdapter(emptyList(), clickListener = { id ->  launchMealDetails(id) })
         dessertAdapter = HomeRecyclerAdapter(emptyList(), clickListener = { id ->  launchMealDetails(id) })
         recyclerBreakfast.adapter = breakfastAdapter
-        recyclerStarter.adapter = starterAdapter
         recyclerDessert.adapter = dessertAdapter
 
         lifecycleScope.launchWhenStarted {
@@ -49,19 +46,6 @@ class HomeFragment : Fragment() {
                 when {
                     !it.meals.isNullOrEmpty() -> {
                         breakfastAdapter.setMeals(it.meals)
-                    }
-                    !it.errorMessage.isNullOrEmpty() -> {
-                        Toast.makeText(requireContext(), it.errorMessage, Toast.LENGTH_LONG).show()
-                    }
-                }
-            }
-        }
-
-        lifecycleScope.launchWhenStarted {
-            homeViewModel.starterMeal.collect {
-                when {
-                    !it.meals.isNullOrEmpty() -> {
-                        starterAdapter.setMeals(it.meals)
                     }
                     !it.errorMessage.isNullOrEmpty() -> {
                         Toast.makeText(requireContext(), it.errorMessage, Toast.LENGTH_LONG).show()
@@ -82,7 +66,13 @@ class HomeFragment : Fragment() {
                 }
             }
         }
+
+        searchView.setOnClickListener {
+            val intent = Intent(it.context, SearchMealActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 
     private fun launchMealDetails(id: Int){
         Log.d("SENT id drink", id.toString())

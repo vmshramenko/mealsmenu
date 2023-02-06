@@ -7,6 +7,7 @@ import com.example.mealsmenu.data.MealsApi
 import com.example.mealsmenu.data.MealsResponse
 import com.example.mealsmenu.data.RetrofitHelper
 import retrofit2.Response
+import retrofit2.create
 
 class MealsModel {
     suspend fun getBreakfastMeals(): Response<MealsResponse> {
@@ -126,6 +127,13 @@ class MealsModel {
         val quotesApi = RetrofitHelper.getInstance().create(MealsApi::class.java)
         val result = quotesApi.getMealDetails(id)
         Log.d("GET meal details", result.body().toString())
+
+        return result
+    }
+
+    suspend fun getSearchMeals(search: String): Response<DetailsResponse> {
+        val quotesApi = RetrofitHelper.getInstance().create(MealsApi::class.java)
+        val result = quotesApi.getSearchMeals(search)
 
         return result
     }
