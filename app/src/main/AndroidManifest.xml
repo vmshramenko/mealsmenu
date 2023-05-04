@@ -15,6 +15,36 @@
         android:theme="@style/Theme.MealsMenu"
         tools:targetApi="31">
         <activity
+            android:name=".authentication.SignInPasswordActivity"
+            android:exported="false"
+            android:label="@string/title_activity_sign_in_password"
+            android:theme="@style/Theme.MealsMenu.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".authentication.SignUpPasswordActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".authentication.SignInGoogleActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.AppActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.SearchMealActivity"
             android:exported="false">
             <meta-data
@@ -29,7 +59,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.AppActivity"
+            android:name=".authentication.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

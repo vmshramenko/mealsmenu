@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "322099823877",
+    "project_id": "mealsmenu-23b51",
+    "storage_bucket": "mealsmenu-23b51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322099823877:android:8a9d7736b94bb53663e36c",
+        "android_client_info": {
+          "package_name": "com.example.mealsmenu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322099823877-gheobl7h4c322d2l98lr5rj54ac43c5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgZyU_uYLzw2ODrGyAQ8Vqb-iq0Xq8gfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322099823877-7gc96hf8sfh88uhgfigfpu4sspit64pp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

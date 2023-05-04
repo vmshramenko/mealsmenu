@@ -12,7 +12,7 @@ import com.example.mealsmenu.R
 import com.example.mealsmenu.adapters.CategoryMealsAdapter
 import com.example.mealsmenu.viewmodels.BaseViewModel
 
-abstract class BaseCategoryFragment : Fragment() {
+abstract class  BaseCategoryFragment : Fragment() {
     private lateinit var baseViewModel: BaseViewModel
     private lateinit var adapter: CategoryMealsAdapter
 

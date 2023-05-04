@@ -7,6 +7,7 @@ import com.example.mealsmenu.R
 import com.example.mealsmenu.fragments.BeefFragment
 import com.example.mealsmenu.fragments.CatalogFragment
 import com.example.mealsmenu.fragments.HomeFragment
+import com.example.mealsmenu.fragments.MoreFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class AppActivity : AppCompatActivity() {
@@ -31,6 +32,9 @@ class AppActivity : AppCompatActivity() {
             }
            R.id.catalog -> {
                 selectedFragment = CatalogFragment()
+            }
+            R.id.more -> {
+                selectedFragment = MoreFragment()
             }
         }
         supportFragmentManager.beginTransaction()
